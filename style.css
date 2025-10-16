@@ -1,0 +1,490 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Header - Full Width */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  z-index: 100;
+  height: 55px;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Side Navigation - Fixed Position */
+.side-nav {
+  position: fixed;
+  top: 55px;
+  left: 0;
+  width: 60px;
+  height: calc(100% - 55px);
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  z-index: 90;
+}
+
+.side-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.side-nav-item:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.side-nav-item i {
+  width: 30px;
+  text-align: center;
+}
+
+.side-nav-item:hover {
+  background-color: #575757;
+}
+
+/* active navigation item */
+.side-nav-item.active  {
+  background-color:#007bff;//blue color
+  color: gold; 
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Content Area */
+.content {
+  margin-left: 60px;
+  margin-top: 55px;
+  height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(183, 222, 236);
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 10px;
+  overflow: auto;
+  margin-top: 0px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+/* Welcome message */
+.welcome-message {
+  padding: 10px;
+}
+
+.welcome-message h2 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Registration Form Styles */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f7f9fa;
+}
+
+.registration-form h2 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(171, 194, 219);
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  margin: 10px;
+}
+
+.btn {
+  background-color: rgb(206, 182, 182);
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(4px);
+}
+
+.submit-btn:disabled {
+  background-color: grey !important;
+  color: white !important;
+  cursor: not-allowed !important;
+  opacity: 0.5;
+  transition: none !important;
+}
+
+.submit-btn:disabled:hover {
+  background-color: grey !important;
+  color: white !important;
+}
+
+/* Tables Styles */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.large-table-container {
+  width: 45%;
+  margin-top: 40px;
+  align-self: center;
+  margin-right: 200px;
+}
+
+.small-table-container {
+  width: 30%;
+  margin-top: -125%;
+  margin-bottom: 147px;
+  align-self: flex-end;
+  margin-right: 14%;
+  margin-left: 55%;
+}
+
+.table-wrapper {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Table component styling */
+.table-component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+.table-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: inherit;
+  width: calc(100% - 6px);
+}
+
+/* Scrollable areas */
+.table-scroll {
+  max-height: 253px;
+  overflow-y: auto;
+  border-top: none;
+}
+
+.small-table-scroll {
+  max-height: 153px;
+  overflow-y: auto;
+  border-top: none;
+}
+
+/* Custom scrollbar styling */
+.table-scroll::-webkit-scrollbar,
+.small-table-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-scroll::-webkit-scrollbar-track,
+.small-table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-scroll::-webkit-scrollbar-thumb,
+.small-table-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover,
+.small-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Body styling */
+.table-body {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Row styling */
+.table-row {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Cell styling */
+.table-heading,
+.table-cell {
+  display: table-cell;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.table-heading {
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #1e5180;
+  text-align: center;
+  border: 1px solid red;
+}
+
+/* Individual header colors using classes */
+.header-col1,
+.header-col2,
+.header-col3,
+.header-col4,
+.header-col5 {
+  background-color: #4682b4;
+}
+
+/* Add extra padding to the last row */
+.table-body .table-row:last-child .table-cell {
+  padding-bottom: 16px;
+}
+
+/* Remove any double borders */
+.table-body .table-row:first-child .table-cell {
+  border-top: none;
+}
+
+/* Column widths using classes instead of nth-child */
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5 {
+  width: 20%;
+}
+
+/* Small table column widths */
+.small-col-1,
+.small-col-2,
+.small-col-3 {
+  width: 33.33%;
+}
+
+/* First column text alignment */
+.col-1,
+.small-col-1 {
+  text-align: left;
+}
+
+/* Todo List Styles */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.todo-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-wrapper h2 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(171, 194, 219);
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-todo-btn {
+  margin-left: 10px;
+  background-color: #4caf50;
+  color: white;
+}
+
+.todo-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  background-color: #f1f1f1;
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.filter-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.todo-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-checkbox {
+  margin-right: 10px;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.delete-todo-btn {
+  background: none;
+  border: none;
+  color: #ff5252;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.todo-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+.clear-completed-btn {
+  background: none;
+  border: none;
+  color: #666;
+  text-decoration: underline;
+}

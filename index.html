@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Web Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="todo-popper.css">
+    <link rel="stylesheet" href="attachment-manager.css">
+    <link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+    <!-- Header is now outside the container and spans full width -->
+    <header class="header">
+        <h1>Comprehensive Web Application</h1>
+    </header>
+
+    <!-- Side navigation is fixed and starts below header -->
+    <nav class="side-nav">
+        <a href="#tables" class="side-nav-item" onclick="showContent('tables')">
+            <i>📊</i>
+            <span class="tooltip">Tables</span>
+        </a>
+        <a href="#registration" class="side-nav-item" onclick="showContent('registration')">
+            <i>📝</i>
+            <span class="tooltip">Registration</span>
+        </a>
+        <a href="#todo" class="side-nav-item" onclick="showContent('todo')">
+            <i>✓</i>
+            <span class="tooltip">To Do</span>
+        </a>
+        <a href="#manageAttachment" class="side-nav-item" onclick="showContent('manageAttachment')">
+            <i>📎</i>
+            <span class="tooltip">Manage Attachment</span>
+        </a>
+        <a href="#carousel" class="side-nav-item" onclick="showContent('carousel')">
+            <i>🥐</i>
+            <span class="tooltip">carousel</span>
+        </a>
+        <a href="#canvas" class="side-nav-item" onclick="showContent('canvas')">
+            <i>🟠</i>
+            <span class="tooltip">canvas</span>
+        </a>
+        <!-- <a href="#circle" class="side-nav-item" onclick="showContent('circle')">
+            <i>🟢</i>
+            <span class="tooltip">circle</span>
+        </a> -->
+    </nav>
+
+    <!-- Content area adjusted to account for fixed header and sidebar -->
+    <div class="content">
+        <main class="main-content">
+            <div class="welcome-message">
+                <h2>Welcome to the Web Application</h2>
+                <p>Use the side navigation to explore Tables, Registration Form, or To Do List</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Comprehensive Web Application</p>
+        </footer>
+    </div>
+
+    <script type="module" src="app.ts"></script>
+    
+</body>
+</html>

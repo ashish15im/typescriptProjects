@@ -1,0 +1,40 @@
+.canvas-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #b7dcec; /* Light blue matching screenshot */
+  border-radius: 8px;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.canvas-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #000;
+}
+
+.removal-btn button {
+  background-color: #f1f1f1;
+  border: 1px solid #999;
+  border-radius: 0;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.canvas-content {
+  position: relative;
+}
+
+#dotsCanvas {
+  width: 100%;
+  height: 500px;
+  background-color: #b7dcec; /* Light blue background */
+}

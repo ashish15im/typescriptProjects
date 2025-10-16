@@ -1,0 +1,197 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding: 20px;
+}
+
+.tools-panel {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  width: 180px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.tools-panel h3 {
+  margin-top: 0;
+  margin-bottom: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+/* Dropdown styling */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.action-dropdown,
+.dot-dropdown {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Dot container that appears below the dropdown */
+.dropdown-dot-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+}
+
+/* Dot styling */
+.dot {
+  width: 40px;
+  height: 40px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  margin: 5px auto;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.4);
+}
+
+.dot:active {
+  cursor: grabbing;
+}
+
+/* Dot management panel */
+.dot-management-panel {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dot-management-panel h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.dot-management-panel select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.dot-management-panel button {
+  width: 100%;
+  padding: 8px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.dot-management-panel button:hover {
+  background-color: #d32f2f;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.canvas-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#placedDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.placed-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(255, 0, 0, 0.4);
+  z-index: 10;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.placed-dot:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.6);
+}
+
+.placed-dot:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.circle-tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 200;
+  display: none;
+}

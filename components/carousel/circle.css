@@ -1,0 +1,179 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;    
+}
+
+.dots-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color:rgb(249, 11, 11);
+  border-radius: 8px;
+  padding: 15px;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  color: #000;
+  
+}
+
+.dot-removal-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgb(206, 31, 31);
+  border-radius: 8px;
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  color: #000;
+  display: none;
+  transition: all 0.3s ease;
+  border: 2px solid #dc2626;
+}
+
+
+.dot-removal-panel h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #991b1b;
+  text-align: center;
+  border-bottom: 1px solid #fecaca;
+  padding-bottom: 8px;
+}
+
+.dot-removal-panel button {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 8px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.dot-removal-panel button:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.dot-removal-panel button:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dot-removal-panel .dot-count {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;  
+}
+
+.canvas-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  margin: 10px auto;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.4);
+}
+
+.dot:active {
+  cursor: grabbing;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#placedDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.placed-dot {
+  width: 16px;
+  height: 16px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(255, 0, 0, 0.4);
+  z-index: 10;
+  pointer-events: auto;
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+}
+
+.placed-dot:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.6);
+}
+
+.placed-dot:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.circle-tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 200;
+  display: none;
+}
+
+.circle-marker {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #666;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
